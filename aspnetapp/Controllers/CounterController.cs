@@ -57,7 +57,7 @@ namespace aspnetapp.Controllers
         {
             if (data.action == "inc") {
                 var counter = await getCounterWithInit();
-                counter.count += 1;
+                counter.count += 5;
                 counter.updatedAt = DateTime.Now;
                 await _context.SaveChangesAsync();
                 return new CounterResponse { data = counter.count };
