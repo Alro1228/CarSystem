@@ -11,6 +11,7 @@ namespace aspnetapp
         {
         }
         public DbSet<Counter> Counters { get; set; } = null!;
+        public DbSet<CarModel> CarModel { get; set; } = null!;
         public CounterContext(DbContextOptions<CounterContext> options)
             : base(options)
         {
@@ -35,6 +36,7 @@ namespace aspnetapp
             modelBuilder.UseCollation("utf8_general_ci")
                 .HasCharSet("utf8");
             modelBuilder.Entity<Counter>().ToTable("Counters");
+            modelBuilder.Entity<CarModel>().ToTable("CarModel");
             OnModelCreatingPartial(modelBuilder);
         }
 
